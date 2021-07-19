@@ -28,7 +28,7 @@ namespace senai_lovePets_webApi.Repositories
 
         public Dono BuscarPorId(int idDono)
         {
-            return ctx.Donos.Find(BuscarPorId(idDono));
+            return ctx.Donos.Find(idDono);
         }
 
         public void Cadastrar(Dono novoDono)
