@@ -8,7 +8,7 @@ namespace senai_lovePets_webApi.Interfaces
 {
     interface IRacaRepository
     {
-        List<Raca> Listar();
+        List<Raca> ListarTodos();
 
         Raca BuscarPorId(int idRaca);
 

@@ -9,7 +9,7 @@ namespace senai_lovePets_webApi.Interfaces
     interface ISituacaoRepository
     {
 
-        List<Situacao> Listar();
+        List<Situacao> ListarTodos();
 
         Situacao BuscarPorId(int idSituacao);
 

@@ -9,7 +9,7 @@ namespace senai_lovePets_webApi.Interfaces
     interface IClinicaRepository
     {
 
-        List<Clinica> Listar();
+        List<Clinica> ListarTodos();
 
         Clinica BuscarPorId(int idClinica);
 

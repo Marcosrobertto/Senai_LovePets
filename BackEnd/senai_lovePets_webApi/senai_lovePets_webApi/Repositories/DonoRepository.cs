@@ -29,7 +29,6 @@ namespace senai_lovePets_webApi.Repositories
         public Dono BuscarPorId(int idDono)
         {
             return ctx.Donos.Find(BuscarPorId(idDono));
-
         }
 
         public void Cadastrar(Dono novoDono)
@@ -42,9 +41,11 @@ namespace senai_lovePets_webApi.Repositories
         public void Deletar(int idDono)
         {
             ctx.Donos.Remove(BuscarPorId(idDono));
+
+            ctx.SaveChanges();
         }
 
-        public List<Dono> Listar()
+        public List<Dono> ListarTodos()
         {
             return ctx.Donos.ToList();
         }

@@ -41,9 +41,11 @@ namespace senai_lovePets_webApi.Repositories
         public void Deletar(int idTipoPet)
         {
             ctx.TipoPets.Remove(BuscarPorId(idTipoPet));
+
+            ctx.SaveChanges();
         }
 
-        public List<TipoPet> Listar()
+        public List<TipoPet> ListarTodos()
         {
             return ctx.TipoPets.ToList();
         }

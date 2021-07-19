@@ -45,9 +45,11 @@ namespace senai_lovePets_webApi.Repositories
         public void Deletar(int idRaca)
         {
             ctx.Racas.Remove(BuscarPorId(idRaca));
+
+            ctx.SaveChanges();
         }
 
-        public List<Raca> Listar()
+        public List<Raca> ListarTodos()
         {
             return ctx.Racas.ToList();
         }
