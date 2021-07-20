@@ -17,6 +17,7 @@ namespace senai_lovePets_webApi.Controllers
     public class SituacaosController : ControllerBase
     {
 
+
         private ISituacaoRepository _situacaoRepository { get; set; }
 
         public SituacaosController()
