@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using senai_lovePets_webApi.Domains;
 using senai_lovePets_webApi.Interfaces;
@@ -23,6 +24,7 @@ namespace senai_lovePets_webApi.Controllers
             _tipoUsuarioRepository = new TipoUsuarioRepository();
         }
 
+        [Authorize(Roles = "1")]
         [HttpGet]
 
         public IActionResult ListarTodos()
@@ -37,6 +39,7 @@ namespace senai_lovePets_webApi.Controllers
             }
         }
 
+        [Authorize(Roles = "1")]
         [HttpGet("{idTipoUsuario}")]
         public IActionResult BuscarPorId(int idTipoUsuario)
         {
@@ -50,6 +53,7 @@ namespace senai_lovePets_webApi.Controllers
             }
         }
 
+        [Authorize(Roles = "1")]
         [HttpPost]
         public IActionResult Cadastrar(TipoUsuario novoTipoUsuario)
         {
@@ -65,6 +69,7 @@ namespace senai_lovePets_webApi.Controllers
             }
         }
 
+        [Authorize(Roles = "1")]
         [HttpPut("{idTipoUsuario}")]
         public IActionResult Atualizar(int idTipoUsuario, TipoUsuario novoTipoUsuario)
         {
@@ -80,6 +85,7 @@ namespace senai_lovePets_webApi.Controllers
             }
         }
 
+        [Authorize(Roles = "1")]
         [HttpDelete("{idTipoUsuario}")]
         public IActionResult Deletar(int idTipoUsuario)
         {

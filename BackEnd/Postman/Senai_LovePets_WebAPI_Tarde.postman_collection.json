@@ -1,0 +1,1790 @@
+{
+	"info": {
+		"_postman_id": "97b7613c-b94d-41fa-83fd-96f907174320",
+		"name": "Senai_LovePets_WebAPI_Tarde",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Login",
+			"item": [
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "// {\r\n//     \"Email\" : \"adm@adm.com\",\r\n//     \"Senha\" : \"adm123\"\r\n// }\r\n\r\n{\r\n    \"Email\" : \"saulo@email.com\",\r\n    \"Senha\" : \"saulo123\"\r\n}\r\n\r\n// {\r\n//     \"Email\" : \"loli@email.com\",\r\n//     \"Senha\" : \"loli123\"\r\n// }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/Login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"Login"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Atendimentos",
+			"item": [
+				{
+					"name": "Atendimentos.ListarTodos",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFkbUBhZG0uY29tIiwianRpIjoiMSIsImh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vd3MvMjAwOC8wNi9pZGVudGl0eS9jbGFpbXMvcm9sZSI6IjEiLCJyb2xlIjoiMSIsImV4cCI6MTYyNjc5ODgxMSwiaXNzIjoibG92ZVBldHMud2ViQXBpIiwiYXVkIjoibG92ZVBldHMud2ViQXBpIn0._AkQHiNJnpNblvYWIbzoNTaHb6cZlby4e2PvdV-Z8W4",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5000/api/atendimentos",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"atendimentos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Atendimentos.BuscarPorId",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFkbUBhZG0uY29tIiwianRpIjoiMSIsImh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vd3MvMjAwOC8wNi9pZGVudGl0eS9jbGFpbXMvcm9sZSI6IjEiLCJyb2xlIjoiMSIsImV4cCI6MTYyNjc5NjkxNywiaXNzIjoibG92ZVBldHMud2ViQXBpIiwiYXVkIjoibG92ZVBldHMud2ViQXBpIn0.dB6D2VrdEl79cl7gqNLGuxby7DeT25fS5YAdXE8zmdc",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5000/api/atendimentos/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"atendimentos",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Atendimentos.Cadastrar",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFkbUBhZG0uY29tIiwianRpIjoiMSIsImh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vd3MvMjAwOC8wNi9pZGVudGl0eS9jbGFpbXMvcm9sZSI6IjEiLCJyb2xlIjoiMSIsImV4cCI6MTYyNjc5NjkxNywiaXNzIjoibG92ZVBldHMud2ViQXBpIiwiYXVkIjoibG92ZVBldHMud2ViQXBpIn0.dB6D2VrdEl79cl7gqNLGuxby7DeT25fS5YAdXE8zmdc",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"idPet\": 1,\r\n    \"idVeterinario\": 1,\r\n    \"descricao\": \"restam 10 dias de vida\",\r\n    \"dataAtendimento\": \"2021-07-15T16:00:00\",\r\n    \"idSituacao\": 1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/atendimentos",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"atendimentos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Atendimentos.Atualizar",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFkbUBhZG0uY29tIiwianRpIjoiMSIsImh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vd3MvMjAwOC8wNi9pZGVudGl0eS9jbGFpbXMvcm9sZSI6IjEiLCJyb2xlIjoiMSIsImV4cCI6MTYyNjc5NjkxNywiaXNzIjoibG92ZVBldHMud2ViQXBpIiwiYXVkIjoibG92ZVBldHMud2ViQXBpIn0.dB6D2VrdEl79cl7gqNLGuxby7DeT25fS5YAdXE8zmdc",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"idPet\": 1,\r\n    \"idVeterinario\": 2,\r\n    \"descricao\": \"o paciente está em estado terminal\",\r\n    \"dataAtendimento\": \"2021-07-17T17:30:00\",\r\n    \"idSituacao\": 2\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/atendimentos/4",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"atendimentos",
+								"4"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Atendimentos.Deletar",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFkbUBhZG0uY29tIiwianRpIjoiMSIsImh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vd3MvMjAwOC8wNi9pZGVudGl0eS9jbGFpbXMvcm9sZSI6IjEiLCJyb2xlIjoiMSIsImV4cCI6MTYyNjc5ODgxMSwiaXNzIjoibG92ZVBldHMud2ViQXBpIiwiYXVkIjoibG92ZVBldHMud2ViQXBpIn0._AkQHiNJnpNblvYWIbzoNTaHb6cZlby4e2PvdV-Z8W4",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5000/api/atendimentos/7",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"atendimentos",
+								"7"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Atendimentos.AlterarStatus",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFkbUBhZG0uY29tIiwianRpIjoiMSIsImh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vd3MvMjAwOC8wNi9pZGVudGl0eS9jbGFpbXMvcm9sZSI6IjEiLCJyb2xlIjoiMSIsImV4cCI6MTYyNjc5NjkxNywiaXNzIjoibG92ZVBldHMud2ViQXBpIiwiYXVkIjoibG92ZVBldHMud2ViQXBpIn0.dB6D2VrdEl79cl7gqNLGuxby7DeT25fS5YAdXE8zmdc",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"idAtendimento\" : 3,\r\n    \"idSituacao\" : 2\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/atendimentos",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"atendimentos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Atendimentos.ListarMeus",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFkbUBhZG0uY29tIiwianRpIjoiMSIsImh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vd3MvMjAwOC8wNi9pZGVudGl0eS9jbGFpbXMvcm9sZSI6IjEiLCJyb2xlIjoiMSIsImV4cCI6MTYyNjc5ODgxMSwiaXNzIjoibG92ZVBldHMud2ViQXBpIiwiYXVkIjoibG92ZVBldHMud2ViQXBpIn0._AkQHiNJnpNblvYWIbzoNTaHb6cZlby4e2PvdV-Z8W4",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5000/api/atendimentos/meus",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"atendimentos",
+								"meus"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Clinicas",
+			"item": [
+				{
+					"name": "Clinicas.ListarTodos",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFkbUBhZG0uY29tIiwianRpIjoiMSIsImh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vd3MvMjAwOC8wNi9pZGVudGl0eS9jbGFpbXMvcm9sZSI6IjEiLCJyb2xlIjoiMSIsImV4cCI6MTYyNjc5ODA2NywiaXNzIjoibG92ZVBldHMud2ViQXBpIiwiYXVkIjoibG92ZVBldHMud2ViQXBpIn0.ItCY6HVHEjRDin3J3S8NLg7sTQ1SHK4_tlLuKxprJ_Q",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5000/api/clinicas",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"clinicas"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Clinicas.BuscarPorId",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFkbUBhZG0uY29tIiwianRpIjoiMSIsImh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vd3MvMjAwOC8wNi9pZGVudGl0eS9jbGFpbXMvcm9sZSI6IjEiLCJyb2xlIjoiMSIsImV4cCI6MTYyNjc5ODA2NywiaXNzIjoibG92ZVBldHMud2ViQXBpIiwiYXVkIjoibG92ZVBldHMud2ViQXBpIn0.ItCY6HVHEjRDin3J3S8NLg7sTQ1SHK4_tlLuKxprJ_Q",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5000/api/clinicas/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"clinicas",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Clinicas.Cadastrar",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFkbUBhZG0uY29tIiwianRpIjoiMSIsImh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vd3MvMjAwOC8wNi9pZGVudGl0eS9jbGFpbXMvcm9sZSI6IjEiLCJyb2xlIjoiMSIsImV4cCI6MTYyNjc5ODA2NywiaXNzIjoibG92ZVBldHMud2ViQXBpIiwiYXVkIjoibG92ZVBldHMud2ViQXBpIn0.ItCY6HVHEjRDin3J3S8NLg7sTQ1SHK4_tlLuKxprJ_Q",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"endereco\": \"R. Test\",\r\n    \"razaoSocial\": \"MarcolaClinica\",\r\n    \"cnpj\": \"99999999999888\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/clinicas",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"clinicas"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Clinicas.Atualizar",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFkbUBhZG0uY29tIiwianRpIjoiMSIsImh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vd3MvMjAwOC8wNi9pZGVudGl0eS9jbGFpbXMvcm9sZSI6IjEiLCJyb2xlIjoiMSIsImV4cCI6MTYyNjc5ODA2NywiaXNzIjoibG92ZVBldHMud2ViQXBpIiwiYXVkIjoibG92ZVBldHMud2ViQXBpIn0.ItCY6HVHEjRDin3J3S8NLg7sTQ1SHK4_tlLuKxprJ_Q",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"endereco\": \"R. Test2\",\r\n    \"razaoSocial\": \"MarcolaClinica2\",\r\n    \"cnpj\": \"99999999999555\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/clinicas/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"clinicas",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Clinicas.Deletar",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFkbUBhZG0uY29tIiwianRpIjoiMSIsImh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vd3MvMjAwOC8wNi9pZGVudGl0eS9jbGFpbXMvcm9sZSI6IjEiLCJyb2xlIjoiMSIsImV4cCI6MTYyNjc5ODA2NywiaXNzIjoibG92ZVBldHMud2ViQXBpIiwiYXVkIjoibG92ZVBldHMud2ViQXBpIn0.ItCY6HVHEjRDin3J3S8NLg7sTQ1SHK4_tlLuKxprJ_Q",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5000/api/clinicas/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"clinicas",
+								"2"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Donos",
+			"item": [
+				{
+					"name": "Donos.ListarTodos",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFkbUBhZG0uY29tIiwianRpIjoiMSIsImh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vd3MvMjAwOC8wNi9pZGVudGl0eS9jbGFpbXMvcm9sZSI6IjEiLCJyb2xlIjoiMSIsImV4cCI6MTYyNjc5ODA2NywiaXNzIjoibG92ZVBldHMud2ViQXBpIiwiYXVkIjoibG92ZVBldHMud2ViQXBpIn0.ItCY6HVHEjRDin3J3S8NLg7sTQ1SHK4_tlLuKxprJ_Q",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5000/api/donos",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"donos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Donos.BuscarPorId",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFkbUBhZG0uY29tIiwianRpIjoiMSIsImh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vd3MvMjAwOC8wNi9pZGVudGl0eS9jbGFpbXMvcm9sZSI6IjEiLCJyb2xlIjoiMSIsImV4cCI6MTYyNjc5ODA2NywiaXNzIjoibG92ZVBldHMud2ViQXBpIiwiYXVkIjoibG92ZVBldHMud2ViQXBpIn0.ItCY6HVHEjRDin3J3S8NLg7sTQ1SHK4_tlLuKxprJ_Q",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5000/api/donos/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"donos",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DonosCadastrar",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFkbUBhZG0uY29tIiwianRpIjoiMSIsImh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vd3MvMjAwOC8wNi9pZGVudGl0eS9jbGFpbXMvcm9sZSI6IjEiLCJyb2xlIjoiMSIsImV4cCI6MTYyNjc5ODA2NywiaXNzIjoibG92ZVBldHMud2ViQXBpIiwiYXVkIjoibG92ZVBldHMud2ViQXBpIn0.ItCY6HVHEjRDin3J3S8NLg7sTQ1SHK4_tlLuKxprJ_Q",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nomeDono\": \"Marcos\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/donos",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"donos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Donos.Atualizar",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFkbUBhZG0uY29tIiwianRpIjoiMSIsImh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vd3MvMjAwOC8wNi9pZGVudGl0eS9jbGFpbXMvcm9sZSI6IjEiLCJyb2xlIjoiMSIsImV4cCI6MTYyNjc5ODA2NywiaXNzIjoibG92ZVBldHMud2ViQXBpIiwiYXVkIjoibG92ZVBldHMud2ViQXBpIn0.ItCY6HVHEjRDin3J3S8NLg7sTQ1SHK4_tlLuKxprJ_Q",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nomeDono\": \"Jose\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/donos/3",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"donos",
+								"3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Donos.Deletar",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFkbUBhZG0uY29tIiwianRpIjoiMSIsImh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vd3MvMjAwOC8wNi9pZGVudGl0eS9jbGFpbXMvcm9sZSI6IjEiLCJyb2xlIjoiMSIsImV4cCI6MTYyNjc5ODA2NywiaXNzIjoibG92ZVBldHMud2ViQXBpIiwiYXVkIjoibG92ZVBldHMud2ViQXBpIn0.ItCY6HVHEjRDin3J3S8NLg7sTQ1SHK4_tlLuKxprJ_Q",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5000/api/donos/3",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"donos",
+								"3"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Pets",
+			"item": [
+				{
+					"name": "Pets.ListarTodos",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFkbUBhZG0uY29tIiwianRpIjoiMSIsImh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vd3MvMjAwOC8wNi9pZGVudGl0eS9jbGFpbXMvcm9sZSI6IjEiLCJyb2xlIjoiMSIsImV4cCI6MTYyNjc5ODA2NywiaXNzIjoibG92ZVBldHMud2ViQXBpIiwiYXVkIjoibG92ZVBldHMud2ViQXBpIn0.ItCY6HVHEjRDin3J3S8NLg7sTQ1SHK4_tlLuKxprJ_Q",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5000/api/pets",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"pets"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Pets.BuscarPorId",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFkbUBhZG0uY29tIiwianRpIjoiMSIsImh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vd3MvMjAwOC8wNi9pZGVudGl0eS9jbGFpbXMvcm9sZSI6IjEiLCJyb2xlIjoiMSIsImV4cCI6MTYyNjc5ODA2NywiaXNzIjoibG92ZVBldHMud2ViQXBpIiwiYXVkIjoibG92ZVBldHMud2ViQXBpIn0.ItCY6HVHEjRDin3J3S8NLg7sTQ1SHK4_tlLuKxprJ_Q",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5000/api/pets/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"pets",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Pets.Cadastrar",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFkbUBhZG0uY29tIiwianRpIjoiMSIsImh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vd3MvMjAwOC8wNi9pZGVudGl0eS9jbGFpbXMvcm9sZSI6IjEiLCJyb2xlIjoiMSIsImV4cCI6MTYyNjc5ODA2NywiaXNzIjoibG92ZVBldHMud2ViQXBpIiwiYXVkIjoibG92ZVBldHMud2ViQXBpIn0.ItCY6HVHEjRDin3J3S8NLg7sTQ1SHK4_tlLuKxprJ_Q",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nomePet\": \"Rex\",\r\n    \"idRaca\": 1,\r\n    \"idDono\": 2,\r\n    \"dataNascimento\": \"2017-11-11T22:00:00\",\r\n    \"idUsuario\": 5\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/pets",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"pets"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Pets.Atualizar",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFkbUBhZG0uY29tIiwianRpIjoiMSIsImh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vd3MvMjAwOC8wNi9pZGVudGl0eS9jbGFpbXMvcm9sZSI6IjEiLCJyb2xlIjoiMSIsImV4cCI6MTYyNjc5ODA2NywiaXNzIjoibG92ZVBldHMud2ViQXBpIiwiYXVkIjoibG92ZVBldHMud2ViQXBpIn0.ItCY6HVHEjRDin3J3S8NLg7sTQ1SHK4_tlLuKxprJ_Q",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nomePet\": \"tauro\",\r\n    \"idRaca\": 3,\r\n    \"idDono\": 1,\r\n    \"dataNascimento\": \"2020-10-12T23:00:00\",\r\n    \"idUsuario\": 6\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/pets/7",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"pets",
+								"7"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Pets.Deletar",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFkbUBhZG0uY29tIiwianRpIjoiMSIsImh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vd3MvMjAwOC8wNi9pZGVudGl0eS9jbGFpbXMvcm9sZSI6IjEiLCJyb2xlIjoiMSIsImV4cCI6MTYyNjc5ODA2NywiaXNzIjoibG92ZVBldHMud2ViQXBpIiwiYXVkIjoibG92ZVBldHMud2ViQXBpIn0.ItCY6HVHEjRDin3J3S8NLg7sTQ1SHK4_tlLuKxprJ_Q",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5000/api/pets/7",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"pets",
+								"7"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Racas",
+			"item": [
+				{
+					"name": "Racas.ListarTodos",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFkbUBhZG0uY29tIiwianRpIjoiMSIsImh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vd3MvMjAwOC8wNi9pZGVudGl0eS9jbGFpbXMvcm9sZSI6IjEiLCJyb2xlIjoiMSIsImV4cCI6MTYyNjc5ODA2NywiaXNzIjoibG92ZVBldHMud2ViQXBpIiwiYXVkIjoibG92ZVBldHMud2ViQXBpIn0.ItCY6HVHEjRDin3J3S8NLg7sTQ1SHK4_tlLuKxprJ_Q",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5000/api/racas",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"racas"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Racas.BuscarPorId",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFkbUBhZG0uY29tIiwianRpIjoiMSIsImh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vd3MvMjAwOC8wNi9pZGVudGl0eS9jbGFpbXMvcm9sZSI6IjEiLCJyb2xlIjoiMSIsImV4cCI6MTYyNjc5ODA2NywiaXNzIjoibG92ZVBldHMud2ViQXBpIiwiYXVkIjoibG92ZVBldHMud2ViQXBpIn0.ItCY6HVHEjRDin3J3S8NLg7sTQ1SHK4_tlLuKxprJ_Q",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5000/api/racas/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"racas",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Racas.Cadastrar",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"idTipoPet\": 1,\r\n    \"nomeRaca\": \"Rottweiler\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/racas",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"racas"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Racas.Atualizar",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"idTipoPet\": 1,\r\n    \"nomeRaca\": \"Pastor-Alemão\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/racas/5",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"racas",
+								"5"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Racas.Deletar",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5000/api/racas/5",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"racas",
+								"5"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Situacaos",
+			"item": [
+				{
+					"name": "Situacaos.ListarTodos",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFkbUBhZG0uY29tIiwianRpIjoiMSIsImh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vd3MvMjAwOC8wNi9pZGVudGl0eS9jbGFpbXMvcm9sZSI6IjEiLCJyb2xlIjoiMSIsImV4cCI6MTYyNjc5ODA2NywiaXNzIjoibG92ZVBldHMud2ViQXBpIiwiYXVkIjoibG92ZVBldHMud2ViQXBpIn0.ItCY6HVHEjRDin3J3S8NLg7sTQ1SHK4_tlLuKxprJ_Q",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5000/api/situacaos",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"situacaos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Situacaos.BuscarPorId",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFkbUBhZG0uY29tIiwianRpIjoiMSIsImh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vd3MvMjAwOC8wNi9pZGVudGl0eS9jbGFpbXMvcm9sZSI6IjEiLCJyb2xlIjoiMSIsImV4cCI6MTYyNjc5ODA2NywiaXNzIjoibG92ZVBldHMud2ViQXBpIiwiYXVkIjoibG92ZVBldHMud2ViQXBpIn0.ItCY6HVHEjRDin3J3S8NLg7sTQ1SHK4_tlLuKxprJ_Q",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5000/api/situacaos/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"situacaos",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Situacaos.Cadastrar",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFkbUBhZG0uY29tIiwianRpIjoiMSIsImh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vd3MvMjAwOC8wNi9pZGVudGl0eS9jbGFpbXMvcm9sZSI6IjEiLCJyb2xlIjoiMSIsImV4cCI6MTYyNjc5NzkxMCwiaXNzIjoibG92ZVBldHMud2ViQXBpIiwiYXVkIjoibG92ZVBldHMud2ViQXBpIn0.i36hKmYznV-QFRS7uPJ28GumNPDp7duWKv45YQs8IHw",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"url": null
+					},
+					"response": []
+				},
+				{
+					"name": "Situacaos.Atualizar",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFkbUBhZG0uY29tIiwianRpIjoiMSIsImh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vd3MvMjAwOC8wNi9pZGVudGl0eS9jbGFpbXMvcm9sZSI6IjEiLCJyb2xlIjoiMSIsImV4cCI6MTYyNjc5NzkxMCwiaXNzIjoibG92ZVBldHMud2ViQXBpIiwiYXVkIjoibG92ZVBldHMud2ViQXBpIn0.i36hKmYznV-QFRS7uPJ28GumNPDp7duWKv45YQs8IHw",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"url": null
+					},
+					"response": []
+				},
+				{
+					"name": "Situacaos.Deletar",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFkbUBhZG0uY29tIiwianRpIjoiMSIsImh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vd3MvMjAwOC8wNi9pZGVudGl0eS9jbGFpbXMvcm9sZSI6IjEiLCJyb2xlIjoiMSIsImV4cCI6MTYyNjc5NzkxMCwiaXNzIjoibG92ZVBldHMud2ViQXBpIiwiYXVkIjoibG92ZVBldHMud2ViQXBpIn0.i36hKmYznV-QFRS7uPJ28GumNPDp7duWKv45YQs8IHw",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": null
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "TiposPet",
+			"item": [
+				{
+					"name": "TiposPet.ListarTodos",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFkbUBhZG0uY29tIiwianRpIjoiMSIsImh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vd3MvMjAwOC8wNi9pZGVudGl0eS9jbGFpbXMvcm9sZSI6IjEiLCJyb2xlIjoiMSIsImV4cCI6MTYyNjc5NzU3MywiaXNzIjoibG92ZVBldHMud2ViQXBpIiwiYXVkIjoibG92ZVBldHMud2ViQXBpIn0.OXbRZ8BwDRI9swm_8eY7Zrln_1tbL7kBD6P0BSxDvNU",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5000/api/tipospet",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"tipospet"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "TiposPet.BuscarPorId",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFkbUBhZG0uY29tIiwianRpIjoiMSIsImh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vd3MvMjAwOC8wNi9pZGVudGl0eS9jbGFpbXMvcm9sZSI6IjEiLCJyb2xlIjoiMSIsImV4cCI6MTYyNjc5NzU3MywiaXNzIjoibG92ZVBldHMud2ViQXBpIiwiYXVkIjoibG92ZVBldHMud2ViQXBpIn0.OXbRZ8BwDRI9swm_8eY7Zrln_1tbL7kBD6P0BSxDvNU",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5000/api/tipospet/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"tipospet",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "TiposPet.Cadastrar",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFkbUBhZG0uY29tIiwianRpIjoiMSIsImh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vd3MvMjAwOC8wNi9pZGVudGl0eS9jbGFpbXMvcm9sZSI6IjEiLCJyb2xlIjoiMSIsImV4cCI6MTYyNjc5NzU3MywiaXNzIjoibG92ZVBldHMud2ViQXBpIiwiYXVkIjoibG92ZVBldHMud2ViQXBpIn0.OXbRZ8BwDRI9swm_8eY7Zrln_1tbL7kBD6P0BSxDvNU",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nomeTipoPet\": \"passarinho\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/tipospet",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"tipospet"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "TiposPet.Atualizar",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFkbUBhZG0uY29tIiwianRpIjoiMSIsImh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vd3MvMjAwOC8wNi9pZGVudGl0eS9jbGFpbXMvcm9sZSI6IjEiLCJyb2xlIjoiMSIsImV4cCI6MTYyNjc5NzU3MywiaXNzIjoibG92ZVBldHMud2ViQXBpIiwiYXVkIjoibG92ZVBldHMud2ViQXBpIn0.OXbRZ8BwDRI9swm_8eY7Zrln_1tbL7kBD6P0BSxDvNU",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nomeTipoPet\": \"Dino\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/tipospet/3",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"tipospet",
+								"3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "TiposPet.Deletar",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFkbUBhZG0uY29tIiwianRpIjoiMSIsImh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vd3MvMjAwOC8wNi9pZGVudGl0eS9jbGFpbXMvcm9sZSI6IjEiLCJyb2xlIjoiMSIsImV4cCI6MTYyNjc5NzU3MywiaXNzIjoibG92ZVBldHMud2ViQXBpIiwiYXVkIjoibG92ZVBldHMud2ViQXBpIn0.OXbRZ8BwDRI9swm_8eY7Zrln_1tbL7kBD6P0BSxDvNU",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5000/api/tipospet/3",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"tipospet",
+								"3"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "TiposUsuario",
+			"item": [
+				{
+					"name": "TiposUsuario.ListarTodos",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFkbUBhZG0uY29tIiwianRpIjoiMSIsImh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vd3MvMjAwOC8wNi9pZGVudGl0eS9jbGFpbXMvcm9sZSI6IjEiLCJyb2xlIjoiMSIsImV4cCI6MTYyNjc5NzU3MywiaXNzIjoibG92ZVBldHMud2ViQXBpIiwiYXVkIjoibG92ZVBldHMud2ViQXBpIn0.OXbRZ8BwDRI9swm_8eY7Zrln_1tbL7kBD6P0BSxDvNU",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5000/api/tiposUsuario",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"tiposUsuario"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "TiposUsuario.BuscarPorId",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFkbUBhZG0uY29tIiwianRpIjoiMSIsImh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vd3MvMjAwOC8wNi9pZGVudGl0eS9jbGFpbXMvcm9sZSI6IjEiLCJyb2xlIjoiMSIsImV4cCI6MTYyNjc5NzU3MywiaXNzIjoibG92ZVBldHMud2ViQXBpIiwiYXVkIjoibG92ZVBldHMud2ViQXBpIn0.OXbRZ8BwDRI9swm_8eY7Zrln_1tbL7kBD6P0BSxDvNU",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5000/api/tiposUsuario/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"tiposUsuario",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "TiposUsuario.Cadastrar",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFkbUBhZG0uY29tIiwianRpIjoiMSIsImh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vd3MvMjAwOC8wNi9pZGVudGl0eS9jbGFpbXMvcm9sZSI6IjEiLCJyb2xlIjoiMSIsImV4cCI6MTYyNjc5NzU3MywiaXNzIjoibG92ZVBldHMud2ViQXBpIiwiYXVkIjoibG92ZVBldHMud2ViQXBpIn0.OXbRZ8BwDRI9swm_8eY7Zrln_1tbL7kBD6P0BSxDvNU",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n            \"nomeTipoUsuario\": \"Cadastro Novo\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/tiposUsuario",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"tiposUsuario"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "TiposUsuario.Atualizar",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFkbUBhZG0uY29tIiwianRpIjoiMSIsImh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vd3MvMjAwOC8wNi9pZGVudGl0eS9jbGFpbXMvcm9sZSI6IjEiLCJyb2xlIjoiMSIsImV4cCI6MTYyNjc5NzU3MywiaXNzIjoibG92ZVBldHMud2ViQXBpIiwiYXVkIjoibG92ZVBldHMud2ViQXBpIn0.OXbRZ8BwDRI9swm_8eY7Zrln_1tbL7kBD6P0BSxDvNU",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n            \"nomeTipoUsuario\": \"Cadastro Novo2\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/tiposUsuario/4",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"tiposUsuario",
+								"4"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "TiposUsuario.Deletar",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFkbUBhZG0uY29tIiwianRpIjoiMSIsImh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vd3MvMjAwOC8wNi9pZGVudGl0eS9jbGFpbXMvcm9sZSI6IjEiLCJyb2xlIjoiMSIsImV4cCI6MTYyNjc5NzU3MywiaXNzIjoibG92ZVBldHMud2ViQXBpIiwiYXVkIjoibG92ZVBldHMud2ViQXBpIn0.OXbRZ8BwDRI9swm_8eY7Zrln_1tbL7kBD6P0BSxDvNU",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5000/api/tiposUsuario/4",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"tiposUsuario",
+								"4"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Usuarios",
+			"item": [
+				{
+					"name": "Usuarios.ListarTodos",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFkbUBhZG0uY29tIiwianRpIjoiMSIsImh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vd3MvMjAwOC8wNi9pZGVudGl0eS9jbGFpbXMvcm9sZSI6IjEiLCJyb2xlIjoiMSIsImV4cCI6MTYyNjc5NzU3MywiaXNzIjoibG92ZVBldHMud2ViQXBpIiwiYXVkIjoibG92ZVBldHMud2ViQXBpIn0.OXbRZ8BwDRI9swm_8eY7Zrln_1tbL7kBD6P0BSxDvNU",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5000/api/usuarios",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"usuarios"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Usuarios.BuscarPorId",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFkbUBhZG0uY29tIiwianRpIjoiMSIsImh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vd3MvMjAwOC8wNi9pZGVudGl0eS9jbGFpbXMvcm9sZSI6IjEiLCJyb2xlIjoiMSIsImV4cCI6MTYyNjc5NzU3MywiaXNzIjoibG92ZVBldHMud2ViQXBpIiwiYXVkIjoibG92ZVBldHMud2ViQXBpIn0.OXbRZ8BwDRI9swm_8eY7Zrln_1tbL7kBD6P0BSxDvNU",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5000/api/usuarios/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"usuarios",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Usuarios.Cadastrar",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFkbUBhZG0uY29tIiwianRpIjoiMSIsImh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vd3MvMjAwOC8wNi9pZGVudGl0eS9jbGFpbXMvcm9sZSI6IjEiLCJyb2xlIjoiMSIsImV4cCI6MTYyNjc5NzU3MywiaXNzIjoibG92ZVBldHMud2ViQXBpIiwiYXVkIjoibG92ZVBldHMud2ViQXBpIn0.OXbRZ8BwDRI9swm_8eY7Zrln_1tbL7kBD6P0BSxDvNU",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n        \"idTipoUsuario\": 3,\r\n        \"email\": \"marcos@gmail.com\",\r\n        \"senha\": \"marcos123\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/usuarios",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"usuarios"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Usuarios.Atualizar",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFkbUBhZG0uY29tIiwianRpIjoiMSIsImh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vd3MvMjAwOC8wNi9pZGVudGl0eS9jbGFpbXMvcm9sZSI6IjEiLCJyb2xlIjoiMSIsImV4cCI6MTYyNjc5NzU3MywiaXNzIjoibG92ZVBldHMud2ViQXBpIiwiYXVkIjoibG92ZVBldHMud2ViQXBpIn0.OXbRZ8BwDRI9swm_8eY7Zrln_1tbL7kBD6P0BSxDvNU",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n        \"idTipoUsuario\": 3,\r\n        \"email\": \"marcos_novo@gmail.com\",\r\n        \"senha\": \"marcos123_\"\r\n\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/usuarios/7",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"usuarios",
+								"7"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Usuarios.Deletar",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFkbUBhZG0uY29tIiwianRpIjoiMSIsImh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vd3MvMjAwOC8wNi9pZGVudGl0eS9jbGFpbXMvcm9sZSI6IjEiLCJyb2xlIjoiMSIsImV4cCI6MTYyNjc5ODgxMSwiaXNzIjoibG92ZVBldHMud2ViQXBpIiwiYXVkIjoibG92ZVBldHMud2ViQXBpIn0._AkQHiNJnpNblvYWIbzoNTaHb6cZlby4e2PvdV-Z8W4",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5000/api/usuarios/7",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"usuarios",
+								"7"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Veterinarios",
+			"item": [
+				{
+					"name": "Veterinarios.ListarTodos",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFkbUBhZG0uY29tIiwianRpIjoiMSIsImh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vd3MvMjAwOC8wNi9pZGVudGl0eS9jbGFpbXMvcm9sZSI6IjEiLCJyb2xlIjoiMSIsImV4cCI6MTYyNjc5NzU3MywiaXNzIjoibG92ZVBldHMud2ViQXBpIiwiYXVkIjoibG92ZVBldHMud2ViQXBpIn0.OXbRZ8BwDRI9swm_8eY7Zrln_1tbL7kBD6P0BSxDvNU",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5000/api/veterinarios",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"veterinarios"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Veterinarios.BuscarPorId",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFkbUBhZG0uY29tIiwianRpIjoiMSIsImh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vd3MvMjAwOC8wNi9pZGVudGl0eS9jbGFpbXMvcm9sZSI6IjEiLCJyb2xlIjoiMSIsImV4cCI6MTYyNjc5NzU3MywiaXNzIjoibG92ZVBldHMud2ViQXBpIiwiYXVkIjoibG92ZVBldHMud2ViQXBpIn0.OXbRZ8BwDRI9swm_8eY7Zrln_1tbL7kBD6P0BSxDvNU",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5000/api/veterinarios/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"veterinarios",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Veterinarios.Cadastrar",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFkbUBhZG0uY29tIiwianRpIjoiMSIsImh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vd3MvMjAwOC8wNi9pZGVudGl0eS9jbGFpbXMvcm9sZSI6IjEiLCJyb2xlIjoiMSIsImV4cCI6MTYyNjc5NzU3MywiaXNzIjoibG92ZVBldHMud2ViQXBpIiwiYXVkIjoibG92ZVBldHMud2ViQXBpIn0.OXbRZ8BwDRI9swm_8eY7Zrln_1tbL7kBD6P0BSxDvNU",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n        \"idClinica\": 1,\r\n        \"crmv\": \"839246\",\r\n        \"nomeVeterinario\": \"Paulo\",\r\n        \"idUsuario\": 2\r\n\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/veterinarios",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"veterinarios"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Veterinarios.Atualizar",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFkbUBhZG0uY29tIiwianRpIjoiMSIsImh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vd3MvMjAwOC8wNi9pZGVudGl0eS9jbGFpbXMvcm9sZSI6IjEiLCJyb2xlIjoiMSIsImV4cCI6MTYyNjc5NzU3MywiaXNzIjoibG92ZVBldHMud2ViQXBpIiwiYXVkIjoibG92ZVBldHMud2ViQXBpIn0.OXbRZ8BwDRI9swm_8eY7Zrln_1tbL7kBD6P0BSxDvNU",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n        \"idClinica\": 1,\r\n        \"crmv\": \"345774\",\r\n        \"nomeVeterinario\": \"PauloTeste\",\r\n        \"idUsuario\": 2\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/veterinarios/3",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"veterinarios",
+								"3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Veterinarios.Deletar",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFkbUBhZG0uY29tIiwianRpIjoiMSIsImh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vd3MvMjAwOC8wNi9pZGVudGl0eS9jbGFpbXMvcm9sZSI6IjEiLCJyb2xlIjoiMSIsImV4cCI6MTYyNjc5NzU3MywiaXNzIjoibG92ZVBldHMud2ViQXBpIiwiYXVkIjoibG92ZVBldHMud2ViQXBpIn0.OXbRZ8BwDRI9swm_8eY7Zrln_1tbL7kBD6P0BSxDvNU",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5000/api/veterinarios/3",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"veterinarios",
+								"3"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

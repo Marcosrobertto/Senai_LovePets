@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using senai_lovePets_webApi.Domains;
 using senai_lovePets_webApi.Interfaces;
@@ -23,6 +24,7 @@ namespace senai_lovePets_webApi.Controllers
             _petRepository = new PetRepository();
         }
 
+        [Authorize(Roles = "1")]
         [HttpGet]
 
         public IActionResult ListarTodos()
@@ -37,6 +39,7 @@ namespace senai_lovePets_webApi.Controllers
             }
         }
 
+        [Authorize(Roles = "1")]
         [HttpGet("{idPet}")]
         public IActionResult BuscarPorId(int idPet)
         {
@@ -50,6 +53,7 @@ namespace senai_lovePets_webApi.Controllers
             }
         }
 
+        [Authorize(Roles = "1")]
         [HttpPost]
         public IActionResult Cadastrar(Pet novoPet)
         {
@@ -65,6 +69,7 @@ namespace senai_lovePets_webApi.Controllers
             }
         }
 
+        [Authorize(Roles = "1")]
         [HttpPut("{idPet}")]
         public IActionResult Atualizar(int idPet, Pet novoPet)
         {
@@ -80,6 +85,7 @@ namespace senai_lovePets_webApi.Controllers
             }
         }
 
+        [Authorize(Roles = "1")]
         [HttpDelete("{idPet}")]
         public IActionResult Deletar(int idPet)
         {

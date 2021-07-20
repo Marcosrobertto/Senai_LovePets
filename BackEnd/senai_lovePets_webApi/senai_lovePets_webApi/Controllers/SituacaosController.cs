@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using senai_lovePets_webApi.Domains;
 using senai_lovePets_webApi.Interfaces;
@@ -23,6 +24,7 @@ namespace senai_lovePets_webApi.Controllers
             _situacaoRepository = new SituacaoRepository();
         }
 
+        [Authorize(Roles = "1")]
         [HttpGet]
 
         public IActionResult ListarTodos()
@@ -37,12 +39,13 @@ namespace senai_lovePets_webApi.Controllers
             }
         }
 
+        [Authorize(Roles = "1")]
         [HttpGet("{idSituacao}")]
-        public IActionResult BuscarPorId(int idSituacaos)
+        public IActionResult BuscarPorId(int idSituacao)
         {
             try
             {
-                return Ok(_situacaoRepository.BuscarPorId(idSituacaos));
+                return Ok(_situacaoRepository.BuscarPorId(idSituacao));
             }
             catch (Exception erro)
             {
@@ -50,6 +53,7 @@ namespace senai_lovePets_webApi.Controllers
             }
         }
 
+        [Authorize(Roles = "1")]
         [HttpPost]
         public IActionResult Cadastrar(Situacao novaSituacao)
         {
@@ -65,6 +69,7 @@ namespace senai_lovePets_webApi.Controllers
             }
         }
 
+        [Authorize(Roles = "1")]
         [HttpPut("{idSituacao}")]
         public IActionResult Atualizar(int idSituacao, Situacao novaSituacao)
         {
@@ -80,6 +85,7 @@ namespace senai_lovePets_webApi.Controllers
             }
         }
 
+        [Authorize(Roles = "1")]
         [HttpDelete("{idSituacao}")]
         public IActionResult Deletar(int idSituacao)
         {
