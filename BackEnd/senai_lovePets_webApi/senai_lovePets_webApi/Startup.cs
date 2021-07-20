@@ -33,6 +33,17 @@ namespace senai_lovePets_webApi
                     options.SerializerSettings.NullValueHandling = NullValueHandling.Ignore;
                  });
 
+            // Adiciona o CORS ao projeto
+            services.AddCors(options => {
+                options.AddPolicy("CorsPolicy",
+                    builder => {
+                        builder.WithOrigins("http://localhost:3000", "http://localhost:19006")
+                                                                    .AllowAnyHeader()
+                                                                    .AllowAnyMethod();
+                    }
+                );
+            });
+
 
             // Adiciona o serviço do Swagger
             // https://docs.microsoft.com/pt-br/aspnet/core/tutorials/getting-started-with-swashbuckle?view=aspnetcore-5.0&tabs=visual-studio
@@ -73,6 +84,8 @@ namespace senai_lovePets_webApi
                         ValidAudience = "lovePets.webApi"
                     };
                 });
+
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -99,6 +112,9 @@ namespace senai_lovePets_webApi
             app.UseAuthentication();
 
             app.UseAuthorization();
+
+            // Define o uso de CORS
+            app.UseCors("CorsPolicy");
 
             app.UseEndpoints(endpoints =>
             {
