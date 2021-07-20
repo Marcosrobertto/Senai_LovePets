@@ -59,7 +59,7 @@ namespace senai_lovePets_webApi.Repositories
             return ctx.Usuarios.ToList();
         }
 
-        public Usuario Login(string email, string senha)
+        public Usuario BuscarPorEmailSenha(string email, string senha)
         {
             return ctx.Usuarios.FirstOrDefault(i => i.Email == email && i.Senha == senha);
         }
