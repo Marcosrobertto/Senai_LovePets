@@ -197,7 +197,21 @@ export default class Atendimentos extends Component{
 
           <form onSubmit={this.cadastrarAtendimento}>
 
-          <select>
+          <select
+          name="idPet"
+          value={this.state.idPet}
+          onChange={this.atualizaStateCampo}
+          >
+        
+          <option value="0">Selecione o Pet que será atendido</option>
+
+          {
+          this.state.listaPets.map( (pet) => {
+              return(
+                <option key={pet.idPet} value={pet.idPet}>{pet.nomePet}</option>
+              )
+            } )
+          }
 
           </select>
 
@@ -265,8 +279,21 @@ export default class Atendimentos extends Component{
               onChange={this.atualizaStateCampo}
             />
 
-            <select>
+            <select
+            name="idSituacao"
+              value={this.state.idSituacao}
+              onChange={this.atualizaStateCampo}
+            >
 
+              <option value="0">Selecione a Situacao do Atendimento</option>
+
+              {
+                this.state.listaSituacoes.map( (situacoes) => {
+                  return(
+                    <option key={situacoes.idSituacao} value={situacoes.idSituacao}>{situacoes.nomeSituacao} </option>
+                  )
+                } )
+              }
             </select>
 
             {/* <input 

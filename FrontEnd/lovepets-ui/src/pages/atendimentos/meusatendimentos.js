@@ -84,9 +84,7 @@ export default class MeusAtendimentos extends Component{
           </table>
         </section>
 
-        <section>
-          <h2>Cadastro de Atendimentos</h2>
-        </section>
+        
       </div>
     )
   }
